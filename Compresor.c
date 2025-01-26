@@ -159,13 +159,13 @@ int main(int argc, char* argv[]) {
     if (strcmp(argv[1], "-c") == 0) {
         for (int i = 2; i < argc; i++) {
             char* output_name = (char*)malloc(strlen(argv[i]) + 6);
-            strtok(output_name, ".");   // remove the extension
             if (!output_name) {
                 fprintf(stderr, "Memory allocation failed for output file name\n");
                 return 1;
             }
 
             strcpy(output_name, argv[i]);
+            strtok(output_name, ".");   // remove the extension
             strcat(output_name, ".micu");
             compress(argv[i], output_name);
             free(output_name);
