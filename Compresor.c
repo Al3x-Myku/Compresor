@@ -6,14 +6,12 @@
 
 #define HASH_TABLE_SIZE 1024
 
-// Hash table node structure
 typedef struct Node {
     char* word;
     int count;
     struct Node* next;
 } Node;
 
-// Hash function for strings
 unsigned int hash(const char* str) {
     unsigned int hash = 0;
     while (*str) {
@@ -22,7 +20,6 @@ unsigned int hash(const char* str) {
     return hash % HASH_TABLE_SIZE;
 }
 
-// Insert or update a word in the hash table
 void insert(Node** table, const char* word) {
     unsigned int index = hash(word);
     Node* current = table[index];
@@ -40,7 +37,6 @@ void insert(Node** table, const char* word) {
     table[index] = new_node;
 }
 
-// Write the hash table contents to the binary file
 void write_table(Node** table, FILE* out) {
     for (int i = 0; i < HASH_TABLE_SIZE; i++) {
         Node* current = table[i];
@@ -54,7 +50,6 @@ void write_table(Node** table, FILE* out) {
     }
 }
 
-// Free the hash table
 void free_table(Node** table) {
     for (int i = 0; i < HASH_TABLE_SIZE; i++) {
         Node* current = table[i];
@@ -67,7 +62,6 @@ void free_table(Node** table) {
     }
 }
 
-// Compress function: counts words and writes them to the output file
 void compress(const char* input_file, const char* output_file) {
     Node* hash_table[HASH_TABLE_SIZE] = {0};
 
@@ -107,7 +101,6 @@ void compress(const char* input_file, const char* output_file) {
     fclose(out);
 }
 
-// Uncompress function to read the compressed file and reconstruct the original content
 void uncompress(const char* input_file, const char* output_file) {
     FILE* in = fopen(input_file, "rb");
     if (in == NULL) {
