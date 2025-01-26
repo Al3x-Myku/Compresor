@@ -5,7 +5,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![commits](https://flat.badgen.net/github/commits/Al3x-Myku/Compresor/master?scale=1.4)](https://github.com/Al3x-Myku/Compresor/commits/master?icon=github&color=green&style=for-the-badge)
+[![commits](https://flat.badgen.net/github/commits/Al3x-Myku/Compresor/main?scale=1.4)](https://github.com/Al3x-Myku/Compresor/commits/main?icon=github&color=green&style=for-the-badge)
 
 <h3 align="center">Compresor</h3>
 
